@@ -3,22 +3,23 @@ let addButton = document.querySelector(".add-Btn");
 let listBucket = document.querySelector(".list-bucket");
 
 //add  button disabled
-
-input.addEventListener('keyup', () => {
+console.log("shradha")
+if(input){
+input.addEventListener("keyup", () => {
         if(input.value.trim() !== ""){
-            addButton.classList.add('active');
+            addButton.classList.add("active");
         }else{
-            addButton.classList.remove('active');
+            addButton.classList.remove("active");
         }
 })
-
+}
 
 //add new item to list bucket 
 
-addButton.addEventListener('click', () => {
+addButton.addEventListener("click", () => {
     if(input.value.trim() !== ""){
-        let newItem = document.createElement('div');
-        newItem.classList.add('list-item');
+        let newItem = document.createElement("div");
+        newItem.classList.add("list-item");
         newItem.innerHTML = `
         <div class="list-item">
         <p class="each-item">
@@ -40,9 +41,16 @@ addButton.addEventListener('click', () => {
     }
 })
 
-
-listBucket.addEventListener('click' , (e) => {
+//delete element from list
+listBucket.addEventListener("click" , (e) => {
         if(e.target.classList.contains('fa-xmark')){
             e.target.parentElement.parentElement.remove();
         }
+})
+
+//sort the element
+listBucket.addEventListener("click",(e) => {
+    if(e.target.classList.contains('fa-arrow-up')){
+      
+    }
 })
